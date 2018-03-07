@@ -11,6 +11,9 @@ module.exports = {
   SASS: {
     get: styleLoader(sassLoader, /\.s[ac]ss$/, /\.module\.s[ac]ss$/),
   },
+  SASS_ONLY_GLOBAL: {
+    get: styleLoader(sassLoader, /\.global\.s[ac]ss$/, undefined),
+  },
   LESS: {
     get: styleLoader(lessLoader, /\.less$/, /\.module\.less$/),
   },
@@ -25,6 +28,9 @@ module.exports = {
   },
   SASS_MODULES: {
     get: styleLoader(sassLoader, /\.module\.s[ac]ss$/, undefined, true),
+  },
+  SASS_MODULES_ALL: {
+    get: styleLoader(sassLoader, /\.s[ac]ss$/, /\.global\.s[ac]ss$/, true),
   },
   CSS_MODULES: {
     get: styleLoader(undefined, /\.module\.css$/, undefined, true),
